@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: black; /* Debug: to see if there are any gaps */
+}
+
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: blue; /* Debug: to see app dimensions */
+}
+
+.background-waves {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+.background-waves canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 200vh;
+  z-index: 1;
+}
+
+.main-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.main-content-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8rem 2rem 2rem;
+}
+
+.main-content h1, .main-content p {
+  margin-top: 15vh;
+  text-align: center;
+}
+
+.nav-dock {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #8e44ad, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#root {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-color: red; /* Debug: to see actual root dimensions */
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.dock-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  min-width: 300px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  backdrop-filter: blur(8px);
+}
+
+.dock-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.dock-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dock-icon svg {
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+.dock-icon:hover svg {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dock-divider {
+  width: 1px;
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 0.5rem;
+  align-self: center;
+}
+
+.dock-tooltip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dock-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.dock-tooltip:hover::after {
+  opacity: 1;
+}
+
+.dock-icon a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 8vh 0 0;
+  padding-left: 2rem;
+  gap: 4rem;
+}
+
+.about-section {
+  flex: 2;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  max-width: 800px;
+}
+
+.about-section h2 {
+  margin-bottom: 1rem;
+}
+
+.image-section {
+  flex: 1;
+  padding: 0;
+  margin-right: -2rem;
+}
+
+.profile-image {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 1rem 0 0 1rem;
+  backdrop-filter: blur(8px);
+}
