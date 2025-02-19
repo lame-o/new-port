@@ -7,6 +7,7 @@ import "./App.css";
 function App() {
   return (
     <div className="app">
+      <div className="orange-square" />
       <div className="background-waves">
         <Canvas>
           <DitheredWaves />
@@ -49,13 +50,14 @@ function App() {
           </Dock>
         </nav>
         <div className="main-content">
-          <h1>Welcome to My Portfolio</h1>
-          <div className="info-container">
-            <div className="about-section">
-              <h2>About Me</h2>
-              <p>Your about text goes here...</p>
+          <div className="content-layout">
+            <div className="info-container">
+              <div className="about-section">
+                <h2>About Me</h2>
+                <p>Your about text goes here...</p>
+              </div>
             </div>
-            <div className="image-section">
+            <div className="profile-container">
               <img src="/pfp.png" alt="Profile" className="profile-image" />
             </div>
           </div>
